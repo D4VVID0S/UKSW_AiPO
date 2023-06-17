@@ -1,0 +1,30 @@
+001-dron-nowy.jpg
+car  :  81.28
+car  :  75.5
+car  :  68.52
+airplane  :  67.25
+car  :  66.32
+car  :  65.58
+car  :  65.52
+car  :  62.97
+car  :  60.54
+cell phone  :  59.42
+car  :  59.06
+car  :  57.57
+car  :  57.49
+car  :  56.75
+car  :  54.97
+car  :  54.25
+car  :  53.35
+car  :  52.59
+car  :  51.0
+car  :  50.63
+car  :  50.59
+
+003-tram-nowy.jpg
+train  :  99.3
+
+005-auto-nowy.jpg
+motorcycle  :  96.08
+car  :  95.68
+car  :  80.05

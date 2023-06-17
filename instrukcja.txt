@@ -1,0 +1,37 @@
+# Instrukcja analiza
+
+1. Instalacja pakietów
+- wrzuć komendę `pip install
+cython pillow numpy opencv-python torch torchvision pytest tqdm scipy matplotlib mock imageai` zeby zainstalować zalezności
+- pobierz wytrenowany model z tego linku https://github.com/OlafenwaMoses/ImageAI/releases/download/3.0.0-pretrained/retinanet_resnet50_fpn_coco-eeacb38b.pth/
+ten z artykulu nie działa z najnowszą wersją imageai
+
+2. Generalnie ten kod działa. Kilka zmian trzeba wprowadzić samemu:
+- zmienić nazwę modelu z `resnet50_coco_best_v2.0.1.h5` na `retinanet_resnet50_fpn_coco-eeacb38b.pth`
+- zmienić nazwę pliku do wczytania i zapisu, zeby się nie nadpisały
+
+Kod skopiowany z artykułu:
+```
+from imageai.Detection import ObjectDetection
+import os
+
+execution_path = os.getcwd()
+
+detector = ObjectDetection()
+detector.setModelTypeAsRetinaNet()
+detector.setModelPath(
+    os.path.join(execution_path , "resnet50_coco_best_v2.0.1.h5")  # tu zmien
+)
+detector.loadModel()
+detections = detector.detectObjectsFromImage(
+    input_image=os.path.join(execution_path , "image.jpg"),  # tu zmien
+    output_image_path=os.path.join(execution_path , "imagenew.jpg"),  # tu zmien
+)
+
+for eachObject in detections:
+    print(eachObject["name"] , " : " , eachObject["percentage_probability"] )
+
+```
+
+Poniewaz są tutaj wykonywane operacje na CPU to mogą wystąpić problemy związane z systemem operacyjnym.
+Najpierw google, potem pytamy na czacie.
